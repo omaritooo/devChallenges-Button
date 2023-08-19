@@ -110,7 +110,6 @@ function App() {
             </BaseButton>
           </div>
         </div>
-
       </div>
     </>
   )
