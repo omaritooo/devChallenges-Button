@@ -10,7 +10,7 @@ interface IButton {
     color?: string,
 }
 
-export const BaseButton = ({variant, disableShadow, children, disabled, startIcon, endIcon, size, color}: PropsWithChildren<IButton>) => {
+export const BaseButton = ({ variant, disableShadow, children, disabled, startIcon, endIcon, size, color }: PropsWithChildren<IButton>) => {
 
     const variants = {
         outline: 'bg-transparent outline outline-1 outline-button-outline text-button-outline focus:bg-button-hover-outline hover:bg-button-hover-outline ',
@@ -30,14 +30,14 @@ export const BaseButton = ({variant, disableShadow, children, disabled, startIco
 
     return <button disabled={disabled} className={`text-base transition duration-75 w-fit items-center flex gap-x-2 font-medium rounded-md 
     ${size ? sizes[size as keyof typeof sizes] : 'px-4 py-2'} ${disableShadow ? '' : 'drop-shadow-button'}
-    ${disabled ? '!bg-button-disabled disabled:text-[#9E9E9E]': ''}  
+    ${disabled ? '!bg-button-disabled disabled:text-[#9E9E9E]' : ''}  
     ${color ? colors[color as keyof typeof colors] : colors['default']} ${variants[variant as keyof typeof variants]}`}>
-       {startIcon ? <span className="material-icons md-18">
+        {startIcon ? <span className="material-icons md-18">
             {startIcon}
-       </span> : null}
-      {children}
-       {endIcon ? <span className="material-icons md-18">
+        </span> : null}
+        {children}
+        {endIcon ? <span className="material-icons md-18">
             {endIcon}
-       </span> : null}
-    </button>   
+        </span> : null}
+    </button>
 }
